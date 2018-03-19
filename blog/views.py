@@ -5,9 +5,9 @@ from . import models
 
 def index(request):
     article1 = models.Article.objects.get(pk=1)
-    article2 = models.Article.objects.get(pk=2)
+    articles = models.Article.objects.all()
 
-    return render(request, 'blog/index.html', {'article': article2})
+    return render(request, 'blog/index.html', {'article': article1, 'articles': articles})
 
 
 def home(request):
